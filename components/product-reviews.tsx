@@ -104,16 +104,41 @@ import lpf_review_p_ryu from "./10003357_ryuu_ear_sort_with_refe_p.json"
 import lpf_review_n_ryu from "./10003357_ryuu_ear_sort_with_refe_n.json"
 import lpf_Review_p_nedann from "./10003357_nedann_ear_sort_with_refe_p.json"
 import lpf_Review_n_nedann from "./10003357_nedann_ear_sort_with_refe_n.json"
+import va_souji_p_review from "./10000006_souji_vacuum_sort_with_refe_p.json"
+import va_souji_n_review from "./10000006_souji_vacuum_sort_with_refe_n.json"
+import va_oto_p_review from "./10000006_oto_vacuum_sort_with_refe_p.json"
+import va_oto_n_review from "./10000006_oto_vacuum_sort_with_refe_n.json"
+import va_gomi_p_review from "./10000006_gomi_vacuum_sort_with_refe_p.json"
+import va_gomi_n_review from "./10000006_gomi_vacuum_sort_with_refe_n.json"
+import va_jyudenn_p_review from "./10000006_jyudenn_vacuum_sort_with_refe_p.json"
+import va_jyudenn_n_review from "./10000006_jyudenn_vacuum_sort_with_refe_n.json"
+import va_ke_p_review from "./10000006_ke_vacuum_sort_with_refe_p.json"
+import va_ke_n_review from "./10000006_ke_vacuum_sort_with_refe_n.json"
+import va_nedann_p_review from "./10000006_nedann_vacuum_sort_with_refe_p.json"
+import va_nedann_n_review from "./10000006_nedann_vacuum_sort_with_refe_n.json"
+import va_heya_p_review from "./10000006_heya_vacuum_sort_with_refe_p.json"
+import va_heya_n_review from "./10000006_heya_vacuum_sort_with_refe_n.json"
+import va_tsukai_p_review from "./10000006_tsukai_vacuum_sort_with_refe_p.json"
+import va_tsukai_n_review from "./10000006_tsukai_vacuum_sort_with_refe_n.json"
+import sva_souji_p_review from "./10007118_souji_vacuum_sort_with_refe_p.json"
+import sva_souji_n_review from "./10007118_souji_vacuum_sort_with_refe_n.json"
+import sva_jyudenn_p_review from "./10007118_jyudenn_vacuum_sort_with_refe_p.json"
+import sva_jyudenn_n_review from "./10007118_jyudenn_vacuum_sort_with_refe_n.json"
+import sva_tsukai_p_review from "./10007118_tsukai_vacuum_sort_with_refe_p.json"
+import sva_tsukai_n_review from "./10007118_tsukai_vacuum_sort_with_refe_n.json"
+import sva_nedann_p_review from "./10007118_nedann_vacuum_sort_with_refe_p.json"
+import sva_nedann_n_review from "./10007118_nedann_vacuum_sort_with_refe_n.json"
 // import Modal from "react-modal"
 
 
-const categories = ["炊飯器","香水"] as const;
+const categories = ["掃除機"] as const;
 const products = {
   // "イヤホン": ["QCY-T1C完全ワイヤレスイヤホン第3/4世代"],
   // "イヤホン": ["QCY-T1C完全ワイヤレスイヤホン第3/4世代","AAC進化版ワイヤレスイヤホン"],
   // "加湿器": ["小型加湿器S08","エルズ ヒュミディファイアー"],
   "炊飯器":["TIGERJPCA101RC炊飯器","NPVI10TA炊飯器"],
-  "香水":["レディースイヴサンローラン香水","定番 モテ香水"]
+  "香水":["レディースイヴサンローラン香水","定番 モテ香水"],
+  "掃除機":["UENOシンプル掃除機","マキタCL107FDSHW掃除機"]
 } as const;
 
 const reviews = {
@@ -1022,6 +1047,155 @@ export function ProductReviewsComponent() {
                 }
                 >
                   量
+                </button>
+              </div>)}
+              {showDetails&&selectedProduct === "UENOシンプル掃除機"&& (
+            <div className='flex flex-wrap justify-center'>
+
+              <button
+              className="rounded-full py-2 px-4 bg-red-500 text-white " 
+              title='positive:126 negative:36'
+              onClick={() => {
+                buttonClick("音",true)
+                Reviews(va_oto_p_review.reviews,va_oto_n_review.reviews)
+                handleReviewshow(va_oto_p_review.reviews,va_oto_p_review.reference,va_oto_n_review.reviews,va_oto_n_review.reference)
+              }}>
+              音
+            </button>
+              <button
+               className="rounded-full py-2 px-4 bg-red-500 text-white"
+               title='positive:123 negative:7'
+               onClick={()=>{
+               buttonClick("掃除",true)
+               Reviews(va_souji_p_review.reviews,va_souji_n_review.reviews)
+               handleReviewshow(va_souji_p_review.reviews,va_souji_p_review.reference,va_souji_n_review.reviews,va_souji_n_review.reference)  
+              }
+               }
+              >
+                掃除
+              </button>
+
+              <button
+              className="rounded-full py-2 px-4 bg-red-500  text-white" 
+              title='positive:62 negative:6'
+              onClick={() => {
+                buttonClick("値段",true)
+                Reviews(va_nedann_p_review.reviews,va_nedann_n_review.reviews)
+                handleReviewshow(va_nedann_p_review.reviews,va_nedann_p_review.reference,va_nedann_n_review.reviews,va_nedann_n_review.reference)
+              }}>
+              値段
+            </button>
+
+            <button
+              className="rounded-full py-2 px-4 bg-red-500  text-white" 
+              title='positive:47 negative:14'
+              onClick={() => {
+                buttonClick("充電",true)
+                Reviews(va_jyudenn_p_review.reviews,va_jyudenn_n_review.reviews)
+                handleReviewshow(va_jyudenn_p_review.reviews,va_jyudenn_p_review.reference,va_jyudenn_n_review.reviews,va_jyudenn_n_review.reference)
+              }}>
+              充電
+            </button>
+
+
+              
+
+            <button
+              className="rounded-full py-2 px-4 bg-red-500  text-white" 
+              title='positive:30 negative:18'
+              onClick={() => {
+                buttonClick("ゴミ",true)
+                Reviews(va_gomi_p_review.reviews,va_gomi_n_review.reviews)
+                handleReviewshow(va_gomi_p_review.reviews,va_gomi_p_review.reference,va_gomi_n_review.reviews,va_gomi_n_review.reference)
+              }}>
+              ゴミ
+            </button>
+
+            <button
+              className="rounded-full py-2 px-4 border boder-while bg-red-500 text-white " 
+               title='positive:48 negative:0'
+              onClick={() => {
+                buttonClick("使い勝手",true)
+                Reviews(va_tsukai_p_review.reviews,va_tsukai_n_review.reviews)
+                handleReviewshow(va_tsukai_p_review.reviews,va_tsukai_p_review.reference,va_tsukai_n_review.reviews,va_tsukai_n_review.reference)
+              }}>
+              使い勝手
+            </button>
+
+            <button
+              className="rounded-full py-2 px-4 bg-red-500  text-white" 
+              title='positive:28 negative:6'
+              onClick={() => {
+                buttonClick("毛",true)
+                Reviews(va_ke_p_review.reviews,va_ke_n_review.reviews)
+                handleReviewshow(va_ke_p_review.reviews,va_ke_p_review.reference,va_ke_n_review.reviews,va_ke_n_review.reference)
+              }}>
+              毛
+            </button>
+
+            <button
+              className="rounded-full py-2 px-4 border boder-while bg-red-500 text-white" 
+              title='positive:19 negative:2'
+              onClick={() => {
+                buttonClick("部屋",true)
+                Reviews(va_heya_p_review.reviews,va_heya_n_review.reviews)
+                handleReviewshow(va_heya_p_review.reviews,va_heya_p_review.reference,va_heya_n_review.reviews,va_heya_n_review.reference)
+              }}>
+              部屋
+            </button>
+            </div> )}
+            {showDetails&&selectedProduct === "マキタCL107FDSHW掃除機"&& (
+              <div className='flex flex-wrap justify-center'>
+               <button
+                className="rounded-full py-2 px-4 bg-red-500  text-white"
+                title="positive:8 negative:1"
+                onClick={()=>{
+                buttonClick("充電",true)
+                Reviews(sva_jyudenn_p_review.reviews,sva_jyudenn_n_review.reviews)
+                handleReviewshow(sva_jyudenn_p_review.reviews,sva_jyudenn_p_review.reference,sva_jyudenn_n_review.reviews,sva_jyudenn_n_review.reference)  
+                }
+                }
+                >
+                  充電
+                </button>
+                
+                <button
+                className="rounded-full py-2 px-4 bg-red-500 text-white"
+                title="positive:7 negative:1"
+                onClick={()=>{
+                buttonClick("掃除",true)
+                Reviews(sva_souji_p_review.reviews,sva_souji_n_review.reviews)
+                handleReviewshow(sva_souji_p_review.reviews,sva_souji_p_review.reference,sva_souji_n_review.reviews,sva_souji_n_review.reference)  
+                }
+                }
+                >
+                  掃除
+                </button>
+                <button
+                className="rounded-full py-2 px-4 bg-red-500 text-white"
+                title="positive:4 negative:2"
+                onClick={()=>{
+                buttonClick("使い勝手",true)
+                Reviews(sva_tsukai_p_review.reviews,sva_tsukai_n_review.reviews)
+                handleReviewshow(sva_tsukai_p_review.reviews,sva_tsukai_p_review.reference,sva_tsukai_n_review.reviews,sva_tsukai_n_review.reference)  
+                }
+                }
+                >
+                  使い勝手
+                </button>
+
+
+                <button
+                className="rounded-full py-2 px-4 bg-red-500 text-white"
+                title="positive:2 negative:1"
+                onClick={()=>{
+                buttonClick("値段",true)
+                Reviews(sva_nedann_p_review.reviews,sva_nedann_n_review.reviews)
+                handleReviewshow(sva_nedann_p_review.reviews,sva_nedann_p_review.reference,sva_nedann_n_review.reviews,sva_nedann_n_review.reference)  
+                }
+                }
+                >
+                  値段
                 </button>
               </div>)}
 
